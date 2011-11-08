@@ -1,0 +1,24 @@
+%h3
+  %b Name: 
+  = @product.name         
+%p 
+  Origin: 
+  = @product.origin
+  
+%p
+  Description:
+  = @product.description  
+%br  
+ 
+%b Komentarze:
+%br
+- @product.comments.each do |c|
+  %p= c.content
+
+= form_for [@product, @product.comments.new] do |f|
+  %p= f.text_area :content
+  %p= f.submit "Komentuj"
+  
+%p
+  = link_to "Back to product list", root_path
+%p

@@ -1,0 +1,21 @@
+
+
+
+%h1 Listing products
+%table
+  %tr
+    %th Name
+    %th Origin
+    %th
+    %th
+    %th
+  - @products.each do |pr|
+    %tr
+      %td= link_to pr.name, pr
+      %td= pr.origin
+     
+%br/
+= will_paginate @products	 
+%br/
+= link_to 'New product', new_product_path
+

@@ -1,0 +1,17 @@
+
+-   @product.save
+%h3 New product has been successfully added!
+
+Name:
+= @product.name
+%br
+%br 
+Origin:
+= @product.origin
+%br
+%br
+Description:   
+=@product.description
+%br
+%br
+= link_to 'Back to product list', products_path 
